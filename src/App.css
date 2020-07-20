@@ -4,7 +4,7 @@ html {
   box-sizing: border-box;
 }
 
-/* inherit border-box on all elements in the universe and before and after
+/* inherit border-box on all elements
  */
 *,
 *:before,
@@ -38,6 +38,11 @@ html {
   display: flex;
   flex-flow: row wrap;
   min-width: 90%;
+}
+
+.Display-container .options #algorithmSelectLabel,
+#algorithmSelect {
+  color: white;
 }
 
 [class*="col-"] {

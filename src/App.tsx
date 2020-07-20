@@ -4,7 +4,8 @@ import Options from "./components/Options";
 import Visualisation from "./components/Visualisation";
 
 function App() {
-  let Algorithms: string[] = [
+  const Algorithms: string[] = [
+    "Unsorted",
     "BubbleSort",
     "QuickSort",
     "SelectionSort",
@@ -12,19 +13,29 @@ function App() {
     "HeapSort",
     "MergeSort",
   ];
+
+  const generateValues = () => {
+    let returnValues = [];
+    for (let i = 0; i < 10; i++) {
+      returnValues.push(Math.floor(Math.random() * 100 + 1));
+    }
+    return returnValues;
+  };
+
+  const values: number[] = generateValues();
   return (
     <div className="App">
       <header className="App-header">
         <h1>Sorting Algorithms</h1>
       </header>
-      <body className="App-body">
+      <div className="App-body">
         {/* Make this title dynamic and change based on selection */}
         <h2 className="Content-title">Bubble Sort</h2>
         <div className="Display-container">
-          <Options Algorithms={Algorithms} />
-          <Visualisation />
+          <Options Algorithms={Algorithms} Values={values} />
+          <Visualisation Values={values} />
         </div>
-      </body>
+      </div>
     </div>
   );
 }
