@@ -2,6 +2,7 @@ import React from "react";
 import "./App.css";
 import Options from "./components/Options";
 import Visualisation from "./components/Visualisation";
+import { generateValues } from "./Utils/ListGeneration";
 
 function App() {
   const Algorithms: string[] = [
@@ -13,14 +14,6 @@ function App() {
     "HeapSort",
     "MergeSort",
   ];
-
-  const generateValues = () => {
-    let returnValues = [];
-    for (let i = 0; i < 10; i++) {
-      returnValues.push(Math.floor(Math.random() * 100 + 1));
-    }
-    return returnValues;
-  };
 
   const values: number[] = generateValues();
   return (
